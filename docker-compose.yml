@@ -1,0 +1,22 @@
+version: "3.3"  
+services:
+  myapp:
+    build: /Dockertest/react_docker/ 
+    ports:
+      - "3000:3000"
+    links:
+      - "myapi"
+    
+      
+<<<<<<< HEAD
+=======
+      
+>>>>>>> initial changes
+                 
+  myapi:
+    build: /Dockertest/docker_nodeapi/ 
+    ports:
+      - "3001:3001"
+    
+    
+    

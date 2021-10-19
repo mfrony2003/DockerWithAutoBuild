@@ -1,22 +1,19 @@
-version: "3.3"  
+version: "3.3"
 services:
   myapp:
-    build: /Dockertest/react_docker/ 
+    build: ./Docker_React/
+    image: app_cicd
     ports:
       - "3000:3000"
     links:
       - "myapi"
-    
-      
-<<<<<<< HEAD
-=======
-      
->>>>>>> initial changes
-                 
+
+
+
+
+
   myapi:
-    build: /Dockertest/docker_nodeapi/ 
+    build: ./Docker_NodeAPI/
+    image: api_cicd
     ports:
       - "3001:3001"
-    
-    
-    

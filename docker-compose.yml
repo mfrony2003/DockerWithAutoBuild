@@ -2,7 +2,7 @@ version: "3.3"
 services:
   myapp:
     build: ./Docker_React/
-    image: app_cicd
+    image: mfrony2003/app_cicd:new
     ports:
       - "3000:3000"
     links:
@@ -14,6 +14,6 @@ services:
 
   myapi:
     build: ./Docker_NodeAPI/
-    image: api_cicd
+    image: mfrony2003/api_cicd:new
     ports:
       - "3001:3001"

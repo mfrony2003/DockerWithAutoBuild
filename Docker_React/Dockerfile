@@ -1,6 +1,6 @@
 FROM node:latest
 WORKDIR /app
-COPY package.json ./
+COPY /Docker_React/package.json ./
 RUN npm install
 COPY . ./
 CMD ["npm", "start"]

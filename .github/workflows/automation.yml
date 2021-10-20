@@ -25,3 +25,7 @@ jobs:
          file: /Docker_NodeAPI/Dockerfile
          push: true
          tags: mfrony2003/api_cicd:latest
+
+         file: /Docker_React/Dockerfile
+         push: true
+         tags: mfrony2003/app_cicd:latest

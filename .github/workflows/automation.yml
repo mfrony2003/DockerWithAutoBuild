@@ -21,7 +21,7 @@ jobs:
        name: Build and push
        id: docker_build
        uses: docker/build-push-action@v2
-       dockerfile: /Docker_NodeAPI/Dockerfile.ci
        with:
+         file: /Docker_NodeAPI/Dockerfile.ci
          push: true
          tags: mfrony2003/api_cicd:latest

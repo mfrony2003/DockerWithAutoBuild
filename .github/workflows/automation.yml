@@ -10,7 +10,7 @@ jobs:
    steps:           
      - name: Print a greeting
        env:
-          Folder_Path: git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
+          Folder_Path: ${{ git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u }}
           Docker_NodeAPI: Docker_NodeAPI
           Docker_React: Docker_React
           

@@ -11,9 +11,13 @@ jobs:
      - name: Print a NodeAPI 
        env:
             Docker_NodeAPI: 'Docker_NodeAPI'
+            run: |
+              echo "$Docker_NodeAPI"
      - name: Print a React 
        env:
             Docker_React: 'Docker_React'
+            run: |
+              echo "$Docker_React"
      - name: Print a Folder_Path 
        env:
             Folder_Path: git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
@@ -34,14 +38,7 @@ jobs:
      
      
      
-     - name: checkout
-       uses: actions/checkout@v2
-       with:
-          fetch-depth: 0
-     - name: test
-       run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
-
+     
      
      - name: Build and push api
        id: docker_build_api

@@ -40,7 +40,7 @@ jobs:
      - name: Build and push api
        id: docker_build_api
        uses: docker/build-push-action@v2
-       if: contains(steps.getfile.outputs.files,'sdsdsd')
+       if: ${{steps.getfile.outputs.files =='Docker_NodeAPI'}}
        with:
          file: /Docker_NodeAPI/Dockerfile
          push: true
@@ -54,7 +54,7 @@ jobs:
      
      - name: Build and push app
        id: docker_build_app
-       if: contains(steps.getfile.outputs.files,'rewrewr')
+       if: ${{steps.getfile.outputs.files =='Docker_React'}}
        uses: docker/build-push-action@v2
        with:
          file: /Docker_React/Dockerfile

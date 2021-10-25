@@ -7,6 +7,10 @@ on:
 jobs:
  main:
    runs-on: ubuntu-latest
+   env:
+          Folder_Path: git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
+          run: |
+            echo $Folder_Path
    steps:           
       
      
@@ -48,7 +52,7 @@ jobs:
      - name: test
        run: |
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
-          
+
      - name: echo output
        run: |
           echo ${{ steps.getfile.outputs.files }}

@@ -37,7 +37,7 @@ jobs:
      - name: Build and push api
        id: docker_build_api
        uses: docker/build-push-action@v2
-       if: contains(github.repository, 'Docker_NodeAPI')
+       if: contains(github.repository, 'DockerWithAutoBuild')
        with:
          file: /Docker_NodeAPI/Dockerfile
          push: true

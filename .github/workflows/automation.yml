@@ -11,7 +11,7 @@ jobs:
      - name: Print a greeting
        run: |
         echo Let\'s define a variable:
-        Folder_Path = run git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
+        Folder_Path = $(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u)
         echo Display the version prefix: $Folder_Path        
 
        

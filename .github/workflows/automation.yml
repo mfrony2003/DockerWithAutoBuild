@@ -41,6 +41,14 @@ jobs:
        run: |
           echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs)"
 
+     - name: checkout
+       uses: actions/checkout@v2
+       with:
+          fetch-depth: 0
+     - name: test
+       run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
+          
      - name: echo output
        run: |
           echo ${{ steps.getfile.outputs.files }}

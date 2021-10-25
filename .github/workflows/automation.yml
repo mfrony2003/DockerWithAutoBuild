@@ -23,10 +23,18 @@ jobs:
      
      
      
-     -  name: test
-        run: |
+     - name: checkout
+       uses: actions/checkout@v2
+       with:
+          fetch-depth: 0
+     - name: test
+       run: |
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
-     
+          
+     - name: echo output
+       run: |
+          echo ${{ steps.getfile.outputs.files }}
+          
      - name: Build and push api
        id: docker_build_api
        uses: docker/build-push-action@v2

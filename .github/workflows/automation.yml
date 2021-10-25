@@ -9,13 +9,12 @@ jobs:
    runs-on: ubuntu-latest
    steps:           
      - name: Print a greeting
-       env:
-          Folder_Path: ${{ git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u }}
-          Docker_NodeAPI: Docker_NodeAPI
-          Docker_React: Docker_React
-          
        run: |
-          echo $Docker_React $Docker_NodeAPI $Folder_Path .
+        echo Let\'s define a variable:
+        Folder_Path = run git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
+        echo Display the version prefix: $Folder_Path        
+
+       
           
      - name: Setup Docker Buildx
        uses: docker/setup-buildx-action@v1

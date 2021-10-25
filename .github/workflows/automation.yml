@@ -22,16 +22,16 @@ jobs:
          password: ${{ secrets.DOCKER_PASSWORD }}
          
      - name: github_ref
-       run: ${{ github.ref }}
+       run: echo " ${{ github.ref }} "
       
      - name: github_repository
-       run: ${{ github.repository }}
+       run: echo "${{ github.repository }}"
       
      - name: github_repository
-       run: ${{ github.repository }}
+       run: echo "${{ github.repository }}"
       
      - name: github.event_name
-       run: ${{ github.event_name }}
+       run: echo "${{ github.event_name }}"
       
 
      - name: Build and push api

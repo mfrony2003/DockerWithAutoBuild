@@ -23,12 +23,14 @@ jobs:
      
      
      
-     
+     -  name: test
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
      
      - name: Build and push api
        id: docker_build_api
        uses: docker/build-push-action@v2
-       if: contains('Docker_NodeAPI', ' run git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u')
+       if: contains('Docker_NodeAPI', ' dfdfdf')
        with:
          file: /Docker_NodeAPI/Dockerfile
          push: true
@@ -42,7 +44,7 @@ jobs:
      
      - name: Build and push app
        id: docker_build_app
-       if: contains('Docker_NodeAPP', ' run git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u')
+       if: contains('Docker_NodeAPP', ' fdfdf')
        uses: docker/build-push-action@v2
        with:
          file: /Docker_React/Dockerfile

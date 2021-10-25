@@ -28,7 +28,7 @@ jobs:
      - name: Build and push api
        id: docker_build_api
        uses: docker/build-push-action@v2
-       if: contains(Docker_NodeAPI, 'sdsd')
+       if: contains(github.repository, 'sdsd')
        with:
          file: /Docker_NodeAPI/Dockerfile
          push: true
@@ -42,7 +42,7 @@ jobs:
      
      - name: Build and push app
        id: docker_build_app
-       if: contains(Docker_React, 'sdsd')
+       if: contains(github.repository, 'sdsd')
        uses: docker/build-push-action@v2
        with:
          file: /Docker_React/Dockerfile

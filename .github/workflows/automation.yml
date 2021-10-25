@@ -8,13 +8,17 @@ jobs:
  main:
    runs-on: ubuntu-latest
    steps:           
-     - name: Print a greeting 
+     - name: Print a NodeAPI 
        env:
             Docker_NodeAPI: 'Docker_NodeAPI'
+     - name: Print a React 
+       env:
             Docker_React: 'Docker_React'
+     - name: Print a Folder_Path 
+       env:
             Folder_Path: git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
             run: |
-              echo $Folder_Path
+              echo "$Folder_Path"
      
      - name: Setup Docker Buildx
        uses: docker/setup-buildx-action@v1

@@ -29,12 +29,12 @@ jobs:
           fetch-depth: 0
      - name: test
        run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u
+          echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs)"
           
      - name: echo output
        run: |
           echo ${{ steps.getfile.outputs.files }}
-          
+
      - name: Build and push api
        id: docker_build_api
        uses: docker/build-push-action@v2

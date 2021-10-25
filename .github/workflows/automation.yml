@@ -30,10 +30,12 @@ jobs:
      - name: github_repository
        run: echo "${{ github.repository }}"
       
-     - name: github.event_name
-       run: echo "${{ github.event_name }}"
-      
-
+     - name: github_actionpath
+       run: echo "${{ github.action_path }}"
+     
+     - name: github_eventpath
+       run: echo "${{ github.event_path }}"
+     
      - name: Build and push api
        id: docker_build_api
        uses: docker/build-push-action@v2

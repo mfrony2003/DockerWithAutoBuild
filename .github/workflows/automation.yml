@@ -11,7 +11,13 @@ jobs:
      - name: Setup Docker Buildx
        uses: docker/setup-buildx-action@v1
      - name: check the path
-       run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+       run: echo "🎉 github.event_name =  ${{ github.event_name }} ."
+       run: echo "🐧 runner.os =  ${{ runner.os }} "
+       run: echo "🔎 github.ref = ${{ github.ref }} ."
+       run: echo "💡 github.repository =  ${{ github.repository }}."
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 job.status =  ${{ job.status }}."
 
      - name: Login to DockerHub
        uses: docker/login-action@v1

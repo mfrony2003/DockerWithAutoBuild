@@ -8,12 +8,14 @@ jobs:
  main:
    runs-on: ubuntu-latest
    steps:           
-     - name: Print a greeting
+     - name: get changed files
+       id: getfile
        run: |
-        echo Let\'s define a variable:
-        Folder_Path = $(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u)
-        echo Display the version prefix: $Folder_Path        
+          echo "::set-output name=files::$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u)"
 
+     -  name: echo output
+        run: |
+          echo ${{ steps.getfile.outputs.files }}
        
           
      - name: Setup Docker Buildx

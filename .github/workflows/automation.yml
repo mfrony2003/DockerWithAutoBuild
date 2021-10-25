@@ -20,7 +20,7 @@ jobs:
      - name: Build and push api
        id: docker_build_api
        uses: docker/build-push-action@v2
-       if: contains(github.repository, 'mfrony2003/Docker_NodeAPI')
+       if: contains(github.repository, 'Docker_NodeAPI')
        with:
          file: /Docker_NodeAPI/Dockerfile
          push: true
@@ -34,7 +34,7 @@ jobs:
      
      - name: Build and push app
        id: docker_build_app
-       if: contains(github.repository, 'mfrony2003/Docker_React')
+       if: contains(github.repository, 'Docker_React')
        uses: docker/build-push-action@v2
        with:
          file: /Docker_React/Dockerfile

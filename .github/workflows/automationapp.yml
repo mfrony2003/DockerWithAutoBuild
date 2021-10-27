@@ -1,4 +1,4 @@
-name: ciAPI
+name: ciAPP
  
 on:
  push:

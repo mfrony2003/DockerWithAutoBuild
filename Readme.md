@@ -4,9 +4,9 @@
 
 ### DockerWithAutoBuild (Full Stack App)
   
-####  -> Docker_NodeAPI  ( API )
+####  -> Docker_NodeAPI  ( Back-End  )
 
-####  -> Docker_React   ( Front End)
+####  -> Docker_React   ( Front-End)
 
 ###   Files for triggering git Work Flow
 

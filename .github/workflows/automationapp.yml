@@ -1,5 +1,4 @@
-name: ciAPP
- 
+name: ciAPP 
 on:
  push:
    branches: master
@@ -11,6 +10,8 @@ jobs:
      - name: checkout
        env:
         Docker_React: Docker_React       
+        run: |
+          echo $Docker_React
      - name: checkout
        uses: actions/checkout@v2
        with:

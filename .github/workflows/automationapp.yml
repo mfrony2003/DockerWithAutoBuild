@@ -3,12 +3,12 @@ name: ciAPP
 on:
  push:
    branches: master
+env:
+  IsDocker_React: ${{steps.getfile.outputs.files =='Docker_React'}}       
  
 jobs:
  main:
    runs-on: ubuntu-latest
-   env:
-     IsDocker_React: ${{steps.getfile.outputs.files =='Docker_React'}}       
    steps:                  
      - name: checkout
        uses: actions/checkout@v2
@@ -32,8 +32,8 @@ jobs:
      
 
      - name: Build and push api
-       id: docker_build_api
-       if: ${{ success() }}
+       id: docker_build_api       
+       if: ${{env.IsDocker_React}}       
        uses: docker/build-push-action@v2       
        with:
          file: /Docker_React/Dockerfile

@@ -22,8 +22,7 @@ class ApiComponent extends React.Component {
     })
 };
   
-  render() {
-      
+  render() {      
       
     const { DataisLoaded, items } = this.state;
     if (!DataisLoaded) return <div>

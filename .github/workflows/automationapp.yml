@@ -35,7 +35,7 @@ jobs:
      
 
      - name: Build and push api
-       id: docker_build_api       
+       id: docker_build_app       
        if: ${{steps.getfile.outputs.files == $Docker_React}}          
        uses: docker/build-push-action@v2       
        with:

@@ -1,5 +1,7 @@
 # DevOps  Cuture
 
+![CI CD](https://github.com/mfrony2003/DockerWithAutoBuild/blob/master/workflow.jpg)
+
 ## Folder Structure 
 
 ### DockerWithAutoBuild (Full Stack App)

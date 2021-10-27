@@ -6,12 +6,11 @@ on:
 jobs:
  main:
    runs-on: ubuntu-latest
-   steps:                  
+   steps:
      - name: print
        env:
-        Docker_React: Docker_React       
-        run: |
-          echo $Docker_React
+          Docker_React: Docker_React
+          run: echo "$Docker_React"                       
           
      - name: checkout
        uses: actions/checkout@v2

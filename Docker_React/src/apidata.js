@@ -12,41 +12,29 @@ class ApiComponent extends React.Component {
     
   componentDidMount() {
 
-    const https = require('https');
     var options = {
         host: 'myapi',
         port: 3001,
         path: '/person/names',
-        method: 'GET'
+        method: 'POST'
       };
       
-      
-      const req = https.request(options, res => {
-        console.log(`statusCode: ${res.statusCode}`);
-      
-        res.on('data', d => {
-
-            var json = d.json();
+      http.request(options, function(res) {
+        console.log('STATUS: ' + res.statusCode);
+        console.log('HEADERS: ' + JSON.stringify(res.headers));
+        res.setEncoding('utf8');
+        res.on('data', function (chunk) {
+            
+            console.log('BODY: ' + chunk);
+            var json = chunk.json();
             this.setState({
                 items: json,
                 DataisLoaded: true
             });
-         // process.stdout.write(d);
+    
         });
-      });
-      
-      req.on('error', error => {
-        console.error(error);
-      });
-    // const apiUrl = 'http://localhost:3001/person/names';
-    // fetch(apiUrl)
-    // .then((res) => res.json())
-    // .then((json) => {
-    //     this.setState({
-    //         items: json,
-    //         DataisLoaded: true
-    //     });
-    // })
+      }).end();    
+    
 };
   
   render() {      

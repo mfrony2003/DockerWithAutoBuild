@@ -11,6 +11,7 @@ class ApiComponent extends React.Component {
     }
     
   componentDidMount() {
+    const http = require('http');
 
     var options = {
         host: 'myapi',

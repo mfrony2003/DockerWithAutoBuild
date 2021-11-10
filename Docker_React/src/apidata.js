@@ -14,7 +14,7 @@ class ApiComponent extends React.Component {
 
     const https = require('https');
     var options = {
-        host: myapi,
+        host: 'myapi',
         port: 3001,
         path: '/person/names',
         method: 'GET'
@@ -25,7 +25,7 @@ class ApiComponent extends React.Component {
         console.log(`statusCode: ${res.statusCode}`);
       
         res.on('data', d => {
-            
+
             var json = d.json();
             this.setState({
                 items: json,

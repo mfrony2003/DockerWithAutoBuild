@@ -17,7 +17,7 @@ class ApiComponent extends React.Component {
         host: 'myapi',
         port: 3001,
         path: '/person/names',
-        method: 'POST'
+        method: 'Get'
       };
       
       http.request(options, function(res) {

@@ -1,7 +1,7 @@
 FROM node:latest
 WORKDIR /app
-COPY /package.json ./
+COPY /Docker_NodeAPI/package.json ./
 RUN npm install
-COPY . .
+COPY /Docker_NodeAPI ./
 CMD ["npm","start"]
 

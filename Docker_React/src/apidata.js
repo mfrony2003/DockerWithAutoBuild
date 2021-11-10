@@ -14,12 +14,12 @@ class ApiComponent extends React.Component {
     const http = require('http');
 
     var options = {
-        host: 'myapi',
+        host: '172.19.03',
         port: 3001,
         path: '/person/names',
         method: 'Get'
       };
-      
+
       
       http.request(options, function(res) {
         console.log('STATUS: ' + res.statusCode);

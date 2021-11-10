@@ -14,7 +14,7 @@ class ApiComponent extends React.Component {
     const http = require('http');
 
     var options = {
-        host: '172.19.0.3',
+        host: '172.19.0.2',
         port: 3001,
         path: '/person/names',
         method: 'Get'

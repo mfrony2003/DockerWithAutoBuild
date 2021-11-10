@@ -20,6 +20,7 @@ class ApiComponent extends React.Component {
         method: 'Get'
       };
       
+      
       http.request(options, function(res) {
         console.log('STATUS: ' + res.statusCode);
         console.log('HEADERS: ' + JSON.stringify(res.headers));

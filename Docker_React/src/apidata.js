@@ -25,6 +25,7 @@ class ApiComponent extends React.Component {
         console.log(`statusCode: ${res.statusCode}`);
       
         res.on('data', d => {
+            
             var json = d.json();
             this.setState({
                 items: json,

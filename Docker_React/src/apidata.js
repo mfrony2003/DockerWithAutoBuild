@@ -29,6 +29,7 @@ const apiUrl = 'http://myapi:3001/person/names';
             items: json,
             DataisLoaded: true
         });
+        
     })
       
       http.request(options, function(res) {

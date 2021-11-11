@@ -8,7 +8,7 @@ const port = 3001
 
 app.use(cors(
   {
-    origin:'http://myapi:3001',
+    origin:'*',
   }
 ));
 

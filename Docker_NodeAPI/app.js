@@ -9,6 +9,8 @@ const port = 3001
 app.use(cors(
   {
     origin:'*',
+    methods:['GET'],
+    credentials:true
   }
 ));
 

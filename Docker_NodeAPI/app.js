@@ -6,7 +6,11 @@ const app = express()
 const port = 3001
 
 
-app.use(cors());
+app.use(cors(
+  {
+    origin:'http://myapi:3001',
+  }
+));
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

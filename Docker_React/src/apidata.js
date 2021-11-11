@@ -20,6 +20,16 @@ class ApiComponent extends React.Component {
         method: 'Get'
       };
 
+const apiUrl = 'http://myapi:3001/person/names';
+    fetch(apiUrl)
+    .then((res) => res.json())
+    .then((json) => {
+        console.log(json);
+        this.setState({
+            items: json,
+            DataisLoaded: true
+        });
+    })
       
       http.request(options, function(res) {
         console.log('STATUS: ' + res.statusCode);

@@ -8,7 +8,7 @@ const port = 3001
 
 app.use(cors(
   {
-    origin:'*',
+    origin:'http://172.19.0.3:3000',
     methods:['GET'],
     credentials:true
   }
